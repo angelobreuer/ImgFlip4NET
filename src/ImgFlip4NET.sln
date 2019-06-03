@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImgFlip4NET", "ImgFlip4NET.csproj", "{97EEC75B-3DB6-4D04-B601-E58AE165E4DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97EEC75B-3DB6-4D04-B601-E58AE165E4DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97EEC75B-3DB6-4D04-B601-E58AE165E4DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97EEC75B-3DB6-4D04-B601-E58AE165E4DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97EEC75B-3DB6-4D04-B601-E58AE165E4DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6387F911-075B-48EB-940F-6AC3D703CD48}
+	EndGlobalSection
+EndGlobal

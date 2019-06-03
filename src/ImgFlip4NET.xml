@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImgFlip4NET</name>
+    </assembly>
+    <members>
+        <member name="P:ImgFlip4NET.CreateResponseData.PageUrl">
+            <summary>
+                Gets the URL to the meme page.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.CreateResponseData.ImageUrl">
+            <summary>
+                Gets the URL to the meme image (JPG).
+            </summary>
+        </member>
+        <member name="T:ImgFlip4NET.ImageFontFamily">
+            <summary>
+                A set of meme font families supported by ImgFlip.
+            </summary>
+        </member>
+        <member name="F:ImgFlip4NET.ImageFontFamily.Impact">
+            <summary>
+                The impact default font.
+            </summary>
+        </member>
+        <member name="F:ImgFlip4NET.ImageFontFamily.Arial">
+            <summary>
+                Arial font family.
+            </summary>
+        </member>
+        <member name="F:ImgFlip4NET.ImageFontFamily.Default">
+            <summary>
+                The default font family used for memes by ImgFlip.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.Id">
+            <summary>
+                Gets the unique identifier of the meme.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.Name">
+            <summary>
+                Gets the name of the meme.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.Url">
+            <summary>
+                Gets the URL to the meme.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.Width">
+            <summary>
+                Gets the width of the meme image.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.Height">
+            <summary>
+                Gets the height of the meme image.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.Meme.BoxCount">
+            <summary>
+                Gets the number of the meme boxes.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.MemeResponseData.Memes">
+            <summary>
+                Gets the list of memes returned in the response.
+            </summary>
+        </member>
+        <member name="T:ImgFlip4NET.ImgFlipOptions">
+            <summary>
+                The service options for the <see cref="T:ImgFlip4NET.ImgFlipService"/>.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipOptions.Username">
+            <summary>
+                Gets or sets the account username for requests to the ImgFlip api. (Note this is only
+                required for <see cref="!:ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipOptions.Password">
+            <summary>
+                Gets or sets the account password for requests to the ImgFlip api. (Note this is only
+                required for <see cref="!:ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipOptions.BaseAddress">
+            <summary>
+                Gets or sets the base address of the ImgFlip RESTful HTTP api.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipOptions.SuppressExceptions">
+            <summary>
+                Gets or sets a value indicating whether API request failures should be suppressed and
+                <see langword="null"/> should be returned instead.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipResponse`1.IsSuccess">
+            <summary>
+                Gets a value indicating whether the request succeed.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipResponse`1.Data">
+            <summary>
+                Gets the response data.
+            </summary>
+        </member>
+        <member name="P:ImgFlip4NET.ImgFlipResponse`1.ErrorMessage">
+            <summary>
+                Gets the response error message with an error why the response failed. (Only
+                available is <see cref="P:ImgFlip4NET.ImgFlipResponse`1.IsSuccess"/> is <see langword="false"/>.)
+            </summary>
+        </member>
+        <member name="T:ImgFlip4NET.ImgFlipService">
+            <summary>
+                The service for making requests to the ImgFlip (https://api.imgflip.com) RESTful HTTP api.
+            </summary>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.#ctor(ImgFlip4NET.ImgFlipOptions)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ImgFlip4NET.ImgFlipService"/> class.
+            </summary>
+            <param name="options">the options for the service</param>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.CreateMemeAsync(System.Int32,System.String,System.String,ImgFlip4NET.ImageFontFamily,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Creates a new meme image asynchronously.
+            </summary>
+            <param name="templateId">the meme template id</param>
+            <param name="topText">the top caption text for the meme</param>
+            <param name="bottomText">the bottom caption text for the meme</param>
+            <param name="fontFamily">the font family to use for the caption texts.</param>
+            <param name="maxFontSize">
+                the max font size in pixels for texts written in the meme (default: 50px)
+            </param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the created
+                meme image info.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+                thrown if the API authentication credentials are not set in the options specified in
+                the constructor.
+            </exception>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.FindMemeTemplateAsync(System.Func{ImgFlip4NET.Meme,System.Boolean},System.Threading.CancellationToken)">
+            <summary>
+                Finds a meme by the specified <paramref name="predicate"/> asynchronously.
+            </summary>
+            <param name="predicate">the meme search predicate</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme found
+                by the specified <paramref name="predicate"/>; or <see langword="null"/> if no meme
+                was found.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.GetMemeTemplateAsync(System.String,System.Threading.CancellationToken,System.StringComparison)">
+            <summary>
+                Finds a meme by the specified <paramref name="name"/> asynchronously.
+            </summary>
+            <param name="name">the meme name</param>
+            <param name="comparison">the string comparison type</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme found
+                by the specified <paramref name="name"/>; or <see langword="null"/> if no meme was found.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.GetMemeTemplateAsync(System.Int32,System.Threading.CancellationToken)">
+            <summary>
+                Finds a meme by the specified <paramref name="id"/> asynchronously.
+            </summary>
+            <param name="id">the meme id</param>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme found
+                by the specified <paramref name="id"/>; or <see langword="null"/> if no meme was found.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.GetRandomMemeTemplateAsync(System.Threading.CancellationToken)">
+            <summary>
+                Gets a random meme template asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme template.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.GetMemeTemplatesAsync(System.Threading.CancellationToken)">
+            <summary>
+                Gets the most-captioned memes in the last 30 days ordered by how many times they were
+                captioned asynchronously. (cached for 2 hours).
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme list
+                that was returned by the HTTP response.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.DownloadMemeTemplatesAsync(System.Threading.CancellationToken)">
+            <summary>
+                Gets the most-captioned memes in the last 30 days ordered by how many times they were
+                captioned asynchronously.
+            </summary>
+            <param name="cancellationToken">
+                a cancellation token used to propagate notification that the asynchronous operation
+                should be canceled.
+            </param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the meme list
+                that was returned by the HTTP response.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.EnsureCredentialsAvailable">
+            <summary>
+                Ensures that the credentials for the ImgFlip api are set in the options specified in
+                the constructor.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+                thrown if the API authentication credentials are not set in the options specified in
+                the constructor.
+            </exception>
+        </member>
+        <member name="M:ImgFlip4NET.ImgFlipService.ProcessResponseAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+                Processes the specified <paramref name="response"/> asynchronously.
+            </summary>
+            <typeparam name="TData">the type of the response data</typeparam>
+            <param name="response">the response</param>
+            <returns>
+                a task that represents the asynchronous operation. The task result is the
+                deserialized response data.
+            </returns>
+            <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+    </members>
+</doc>
