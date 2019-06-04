@@ -11,7 +11,7 @@
     /// <summary>
     ///     The service for making requests to the ImgFlip (https://api.imgflip.com) RESTful HTTP api.
     /// </summary>
-    public sealed class ImgFlipService
+    public sealed class ImgFlipService : IDisposable
     {
         private readonly Guid _boundary;
         private readonly HttpClient _httpClient;
@@ -265,5 +265,10 @@
 
             return payload.Data;
         }
+
+        /// <summary>
+        ///     Disposes the inner HTTP client.
+        /// </summary>
+        public void Dispose() => _httpClient.Dispose();
     }
 }
