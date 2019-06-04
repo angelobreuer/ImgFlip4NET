@@ -1,8 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Angelo Breuer</Authors>
+    <Company>Angelo Breuer</Company>
+    <Product>ImgFlip4NET</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>ImgFlip4NET</Copyright>
+    <Description>A .NET wrapper for the imgflip.com Meme Generator RESTful HTTP api.</Description>
+    <RepositoryUrl>https://github.com/angelobreuer/ImgFlip4NET/pull/new/master</RepositoryUrl>
+    <PackageTags>imgflip, imgflip-wrapper, meme, memes, meme-generator</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon />
+    <StartupObject />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

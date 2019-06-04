@@ -4,6 +4,11 @@
         <name>ImgFlip4NET</name>
     </assembly>
     <members>
+        <member name="T:ImgFlip4NET.CreateResponseData">
+            <summary>
+                The response data for <see cref="M:ImgFlip4NET.ImgFlipService.CreateMemeAsync(System.Int32,System.String,System.String,ImgFlip4NET.ImageFontFamily,System.Int32,System.Threading.CancellationToken)"/>.
+            </summary>
+        </member>
         <member name="P:ImgFlip4NET.CreateResponseData.PageUrl">
             <summary>
                 Gets the URL to the meme page.
@@ -32,6 +37,11 @@
         <member name="F:ImgFlip4NET.ImageFontFamily.Default">
             <summary>
                 The default font family used for memes by ImgFlip.
+            </summary>
+        </member>
+        <member name="T:ImgFlip4NET.Meme">
+            <summary>
+                Represents a meme.
             </summary>
         </member>
         <member name="P:ImgFlip4NET.Meme.Id">
@@ -64,6 +74,11 @@
                 Gets the number of the meme boxes.
             </summary>
         </member>
+        <member name="T:ImgFlip4NET.MemeResponseData">
+            <summary>
+                The strongly-typed response data of a meme listing.
+            </summary>
+        </member>
         <member name="P:ImgFlip4NET.MemeResponseData.Memes">
             <summary>
                 Gets the list of memes returned in the response.
@@ -77,13 +92,13 @@
         <member name="P:ImgFlip4NET.ImgFlipOptions.Username">
             <summary>
                 Gets or sets the account username for requests to the ImgFlip api. (Note this is only
-                required for <see cref="!:ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+                required for <see cref="M:ImgFlip4NET.ImgFlipService.CreateMemeAsync(System.Int32,System.String,System.String,ImgFlip4NET.ImageFontFamily,System.Int32,System.Threading.CancellationToken)"/>.
             </summary>
         </member>
         <member name="P:ImgFlip4NET.ImgFlipOptions.Password">
             <summary>
                 Gets or sets the account password for requests to the ImgFlip api. (Note this is only
-                required for <see cref="!:ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+                required for <see cref="M:ImgFlip4NET.ImgFlipService.CreateMemeAsync(System.Int32,System.String,System.String,ImgFlip4NET.ImageFontFamily,System.Int32,System.Threading.CancellationToken)"/>.
             </summary>
         </member>
         <member name="P:ImgFlip4NET.ImgFlipOptions.BaseAddress">
@@ -96,6 +111,12 @@
                 Gets or sets a value indicating whether API request failures should be suppressed and
                 <see langword="null"/> should be returned instead.
             </summary>
+        </member>
+        <member name="T:ImgFlip4NET.ImgFlipResponse`1">
+            <summary>
+                Represents a response from the ImgFlip api.
+            </summary>
+            <typeparam name="TData">the inner response data</typeparam>
         </member>
         <member name="P:ImgFlip4NET.ImgFlipResponse`1.IsSuccess">
             <summary>
@@ -260,6 +281,12 @@
                 deserialized response data.
             </returns>
             <exception cref="T:System.Exception">thrown if the request to the ImgFlip api failed.</exception>
+        </member>
+        <member name="T:ImgFlip4NET.HexColorConverter">
+            <summary>
+                A color converter for converting Colors to hexadecimal strings (e.g. #000000).
+            </summary>
+            <remarks>This converter only supports writing.</remarks>
         </member>
     </members>
 </doc>
