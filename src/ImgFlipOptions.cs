@@ -11,13 +11,13 @@
     {
         /// <summary>
         ///     Gets or sets the account username for requests to the ImgFlip api. (Note this is only
-        ///     required for <see cref="ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+        ///     required for <see cref="ImgFlipService.CreateMemeAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
         /// </summary>
         public string Username { get; set; }
 
         /// <summary>
         ///     Gets or sets the account password for requests to the ImgFlip api. (Note this is only
-        ///     required for <see cref="ImgFlipService.CreateImageAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
+        ///     required for <see cref="ImgFlipService.CreateMemeAsync(int, string, string, ImageFontFamily, int, CancellationToken)"/>.
         /// </summary>
         public string Password { get; set; }
 

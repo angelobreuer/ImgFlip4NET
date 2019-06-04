@@ -2,6 +2,9 @@
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///     Represents a meme.
+    /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public sealed class Meme
     {

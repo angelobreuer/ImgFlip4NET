@@ -4,6 +4,10 @@
     using System.Drawing;
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///     A color converter for converting Colors to hexadecimal strings (e.g. #000000).
+    /// </summary>
+    /// <remarks>This converter only supports writing.</remarks>
     internal sealed class HexColorConverter : JsonConverter<Color>
     {
         public override Color ReadJson(JsonReader reader, Type objectType, Color existingValue, bool hasExistingValue, JsonSerializer serializer)

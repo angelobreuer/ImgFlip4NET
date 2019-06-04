@@ -2,6 +2,9 @@
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///     The response data for <see cref="ImgFlipService.CreateMemeAsync(int, string, string, ImageFontFamily, int, System.Threading.CancellationToken)"/>.
+    /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public sealed class CreateResponseData
     {

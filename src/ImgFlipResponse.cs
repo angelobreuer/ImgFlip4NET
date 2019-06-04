@@ -2,6 +2,10 @@
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    ///     Represents a response from the ImgFlip api.
+    /// </summary>
+    /// <typeparam name="TData">the inner response data</typeparam>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public sealed class ImgFlipResponse<TData>
         where TData : class, new()
